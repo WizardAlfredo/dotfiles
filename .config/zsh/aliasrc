@@ -1,0 +1,166 @@
+### ARCHIVE EXTRACTION
+# usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   unzstd $1    ;;      
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+export EDITOR=nvim
+alias vim='nvim'
+
+# navigation
+alias ..='cd ..' 
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+
+
+# pacman and yay
+alias pacsyu="sudo pacman -Syyu"                 # update only standard pkgs
+alias yaysua="yay -Sua --noconfirm"              # update only AUR pkgs
+alias yaysyu="yay -Syu --noconfirm"              # update standard pkgs and AUR pkgs
+alias unlock="sudo rm /var/lib/pacman/db.lck"    # remove pacman lock
+alias cleanup="sudo pacman -Rns $(pacman -Qtdq)" # remove orphaned packages
+alias pacskey="sudo pacman -S archlinux-keyring" # Update keyrings
+
+
+# Changing "ls" to "exa"
+alias ls='exa --color=always --group-directories-first' # my preferred listing
+alias la='exa -la --color=always --group-directories-first'  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first'  # long format
+alias lt='exa -aT --color=always --group-directories-first' # tree listing
+alias l.='exa -a | egrep "^\."'
+
+
+# ls, the common ones I use a lot shortened for rapid fire usage
+#alias la='ls -lAFh --color=auto'   #long list,show almost all,show type,human readable
+alias lr='ls -tRFh --color=auto'   #sorted by date,recursive,show type,human readable
+#alias lt='ls -ltFh --color=auto'   #long list,sorted by date,show type,human readable
+alias ldot='ls -ld .* --color=auto'
+alias lS='ls -1FSsh --color=auto'
+alias lart='ls -1Fcart --color=auto'
+alias lrt='ls -1Fcrt --color=auto'
+
+alias zshrc='${=EDITOR} ~/.config/zsh/.zshrc' # Quick access to the zshrc file
+alias nvimrc='${=EDITOR} ~/.config/nvim/init.vim' # Quick access to the init.vim file
+alias aliasrc='${=EDITOR} ~/.config/zsh/aliasrc' # Quick access to the alias file
+alias uni='${=EDITOR} ~/documents/uniProgram.md' # Quick access to uni program
+
+# Colorize grep output
+alias grep='grep --color=auto'
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} --color=auto'
+
+#fix the tmux thing
+alias tmux="tmux -2"
+
+alias t='tail -f'
+
+# Command line head / tail shortcuts
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep'
+alias -g L="| less"
+alias -g M="| most"
+alias -g C="| cut"
+alias -g LL="2>&1 | less"
+alias -g CA="2>&1 | cat -A"
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
+alias -g P="2>&1| pygmentize -l pytb"
+
+# adding flags
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+alias dud='du -d 1 -h'
+alias duf='du -sh *'
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
+alias h='history'
+alias hgrep="fc -El 0 | grep"
+alias help='man'
+alias p='ps -f'
+alias sortnr='sort -n -r'
+alias unexport='unset'
+
+
+alias cp='cp -i'
+alias mv='mv -i'
+
+alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
+alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
+
+## get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+
+## get top process eating cpu ##
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+
+# git
+alias addup='git add -u'
+alias addall='git add .'
+alias branch='git branch'
+alias checkout='git checkout'
+alias clone='git clone'
+alias commit='git commit -m'
+alias fetch='git fetch'
+alias pull='git pull origin'
+alias push='git push origin'
+alias status='git status'
+alias glog='git log'
+alias gshow='git show'
+alias tag='git tag'
+alias newtag='git tag -a'
+
+# get error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
+
+# gpg encryption
+# verify signature for isos
+alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
+# receive the key of a developer
+alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
+
+# Uni
+alias sshdb="ssh lab2021omada2@dblab.nonrelevant.net -p 22210"
+alias asdf="cd /media/hdd/uni/"
+
+# hacking
+alias copy='xclip -selection clipboard'
+
+# from muspelheim
+alias diff='diff --color=auto'
+alias cat="bat -p"
+alias pfetch="curl -s https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch | sh"
+alias icat="kitty +kitten icat"
+#alias xs='fuzzypkg'
+#alias bnps='java -jar ~/Public/font-stuff/bitsnpicas/main/java/BitsNPicas/BitsNPicas.jar'
+#alias figlet="figlet -d ~/Public/figlet-fonts"
+#alias kovpn="sudo pkill -INT openvpn"
+#alias pyratehole="lynx gopher://g.nixers.net/1/~pyratebeard/music/this_week.txt"
+#alias dotlink="stow --ignore='.git' --ignore='screenshots' --ignore='wallpapers' --ignore='.gitignore' --ignore='pkglist.txt' --ignore='README.md' -R --target=/home/barbaross -d /home/barbaross/Public/thonkpad-dotfiles ."
+#alias scan="scanimage --device 'hpaio:/net/OfficeJet_3830_series?ip=192.168.0.13' --progress --format=png --output-file"
+#alias cp="cp --reflink" #to make lightweight copies w/ btrfs

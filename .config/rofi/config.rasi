@@ -1,0 +1,14 @@
+configuration {
+	terminal: "kitty";
+	run {
+		display-name: "Launch:";
+	}
+	window {
+		display-name: "Windows:";
+	}
+	emoji {
+		display-name: "Emoji:";
+	}
+}
+@theme "retro"
+// vim:ft=css

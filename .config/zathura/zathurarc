@@ -1,0 +1,55 @@
+# window frame configurations
+# set window-height 3000
+# set window-width 1000
+set statusbar-h-padding 6
+set statusbar-v-padding 6
+set page-padding 10
+set window-title-page false
+set window-title-home-tilde true
+set statusbar-basename true
+# set statusbar-tilte true
+set guioptions s
+
+# set scrolling options
+set scroll-step 40
+
+# font size
+set font "Spleen 12"
+
+# clipboard configurations
+set selection-clipboard clipboard
+
+# mappings
+
+unmap f
+map f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
+
+# ----- colour config ----- 
+set notification-error-bg "#1c1c1c"
+set notification-error-fg "#af5f5f"
+set notification-warning-bg "#1c1c1c"
+set notification-warning-fg "#af5f5f"
+set notification-bg "#1c1c1c"
+set notification-fg "#af5f5f"
+set completion-group-bg "#1c1c1c"
+set completion-group-fg "#af875f"
+set completion-bg "#262626"
+set completion-fg "#dfdfaf"
+set completion-highlight-bg "#af875f"
+set completion-highlight-fg "#1c1c1c"
+set inputbar-bg "#1c1c1c"
+set inputbar-fg "#dfdfaf"
+set statusbar-bg "#1c1c1c"
+set statusbar-fg "#dfdfaf"
+set highlight-color "#af875f"
+set highlight-active-color "#87875f"
+set default-bg "#1c1c1c"
+set default-fg #dfdfaf
+set recolor-lightcolor "#262626"
+set recolor-darkcolor "#dfdfaf"
+set index-bg "#262626"
+set index-fg "#dfdfaf"
+set index-active-bg "#af875f"
+set index-active-fg "#1c1c1c"
+set recolor true

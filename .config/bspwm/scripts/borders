@@ -1,0 +1,23 @@
+#!/bin/sh
+
+outer='0x424242'   # outer
+inner1='0xaf875f'  # focused
+inner2='0x1c1c1c'  # normal
+
+targets() {
+	case $1 in
+		focused) bspc query -N -n .local.focused.\!fullscreen;;
+		normal)  bspc query -N -n .local.\!focused.\!fullscreen;;
+		active) bspc query -N -n .active.\!focused.\!fullscreen
+	esac
+}
+
+draw() { chwb2 -I "$i" -O "$o" -i "7" -o "10" $@ 2> /dev/null; }
+
+# initial draw, and then subscribe to events
+{ echo; bspc subscribe node_geometry node_focus; } |
+	while read -r _; do
+		i=$outer o=$inner1 draw "$(targets focused)"
+		i=$outer o=$inner2 draw "$(targets  normal)"
+		i=$outer o=$inner2 draw "$(targets  active)"		
+	done

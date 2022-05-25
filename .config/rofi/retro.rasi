@@ -1,0 +1,109 @@
+@import "colors.rasi"
+
+* {
+    background-color:      @bg;
+    border-color:          @bg;
+    text-color:            @fg;
+    vertical-align:         0.5;
+	font:             "gameover 18px";
+    /*font:             "PixeloidSans 15px";*/
+    /*font:             "OldSchoolAdventures 13px";*/
+    /*font:             "F77Minecraft 14px";*/
+    /*font:             "Minecraft 17px";*/
+    /*font:             "PixelSymtext 17px";*/
+    /*font:             "OldSchoolAdventures 13px";???*/
+    /*font:             "PixelMillennium 20px";???*/
+    /*font:             "PublicPixel 12px";*/
+    /*font:             "HouseOfTheDragonColor 25px";*/
+    /*font:             "Rademos 24px";*/
+    /*font:             "ArchkingFreeTrial 23px";*/
+    /*font:             "cozette 15px";*/
+    /*font:             "terra 15px";*/
+    /*font:             "Terminus 14px";*/
+    /*font:             "spleen 14px";*/
+}
+
+window {
+    background-color:               @bg;
+    text-color:                     @fg;
+	border:							10px;
+	border-color:					@bg2;
+    border-radius:                  0px;
+	width:							280px;
+    location:                       center;
+    x-offset:                       0;
+    y-offset:                       0;
+}
+
+prompt {
+    background-color:   @or2;
+	border:							5px;
+	border-color:					@bg;
+    text-color:         @bg;
+    padding:    8px 5px;
+}
+
+horibox {
+    orientation: horizontal;
+    children:   [ prompt, entry, listview, box-num ];
+}
+
+box-num {
+    orientation: horizontal;
+    background-color: #3a3a3a;
+    expand:     false;
+    padding: 3px 5px;
+    children: [ num-filtered-rows, textbox-slash, num-rows ];
+}
+num-filtered-rows {
+    background-color: inherit;
+}
+num-rows {
+    background-color: inherit;
+}
+textbox-slash {
+    expand:         false;
+    content:        "/";
+    background-color: inherit;
+}
+
+listview {
+    background-color:               @bg;
+    padding:                        5px 5px 5px 5px;
+    columns:                        2;
+    lines:                          5;
+    spacing:                        5px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+entry {
+    placeholder:    "Search...";
+    expand:         false;
+    width:          20em;
+    padding:        9px 5px;
+    blink:          true;
+}
+
+element.alternate {
+    background-color:   #262626;
+}
+
+element {
+    padding: 4px 2px;
+}
+
+element selected {
+    background-color:   @or2;
+    text-color:         @bg;
+}
+
+element-text {
+    background-color:   inherit; 
+    text-color:         inherit;
+    padding:            3px 5px;
+    highlight:          underline;
+}
+
+// vim:ft=css

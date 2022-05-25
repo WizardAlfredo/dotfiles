@@ -1,0 +1,71 @@
+#! /bin/sh
+
+# Do nothing if interrupted
+trap '' INT TSTP
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep bspswallow || bspswallow &
+picom -f &
+hsetroot -tile ~/pictures/wallpapers/noise_tile.png &
+nitrogen --restore &
+
+bspc monitor DP-0 -d 1 2 3 4
+bspc monitor HDMI-0 -d 5 6 7 8 
+
+#bspc config bottom_monocle_padding 3
+bspc config border_width 12
+bspc config right_padding 2
+bspc config left_padding 2
+bspc config window_gap 10
+
+# Colors
+. "${HOME}/.config/bspwm/colorschemes/alduin.sh"
+bspc config focused_border_color "$color3"
+bspc config normal_border_color "$color16"
+bspc config presel_feedback_color "$color3"
+bspc config split_ratio 0.50
+bspc config borderless_monocle false
+bspc config gapless_monocle false
+bspc config focus_follows_pointer true
+bspc config pointer_follows_focus false
+bspc config single_monocle true
+bspc config ignore_ewmh_focus true
+
+### Rules
+
+# Cleanup
+bspc rule -r '*'
+
+# State rules
+bspc rule -a "Zathura" state=tiled
+bspc rule -a Gimp desktop='^7' state=floating follow=on
+bspc rule -a "Discord" desktop='^8' state=tiled
+#bspc rule -a "dmenu" state=floating
+#bspc rule -a St:dropdown state=floating #sticky=on
+#bspc rule -a "Sxiv" state=floating rectangle=1824x1026+40+19
+#bspc rule -a "mpv" state=floating
+#bspc rule -a Chromium desktop='^2'
+#bspc rule -a mplayer2 state=floating
+#bspc rule -a Kupfer.py focus=on
+#bspc rule -a Screenkey manage=off
+
+# My Polybar configs
+killall -q polybar
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+# polybar -q buttons -c "$HOME/.config/polybar/config.ini" &
+polybar -q other -c "$HOME/.config/polybar/config.ini" &
+polybar -q coolworkspaces -c "$HOME/.config/polybar/config.ini" &
+#polybar -q main -c "$HOME/.config/polybar/config.ini" &
+
+### Other stuff
+
+# In order for resizing with alt and mouse to work
+bspc config pointer_modifier mod1
+bspc config pointer_action1 move
+
+# Script for the special borders of the wm
+$HOME/.config/bspwm/scripts/borders &
+
+
+bspc config -m HDMI-0 top_padding 1
+# bspc config -m DP-0 bottom_padding 1

@@ -1,0 +1,6 @@
+#/bin/sh
+
+primary="DP-0"
+right="HDMI-0"
+
+xrandr --output $primary --pos 0x0 --mode 1920x1200 --rate 60 --primary && xrandr --output $right --mode 1920x1080 --pos 1920x90 --rate 60

@@ -1,0 +1,10 @@
+{
+  "rsa": {
+    "prefix": "rsa",
+    "body": [
+        "from Crypto.PublicKey import RSA",
+        "\nf = open('$1key.pem','r')"
+    ],
+    "description": "RSA"
+  }
+}

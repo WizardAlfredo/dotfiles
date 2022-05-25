@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+RED=$(printf "%b" "\e[31m")
+WHT=$(printf "%b" "\e[37m")
+BLD=$(printf "%b" "\033[1m")
+
+cat <<EOF
+  .---------.
+  |.-------.|
+  ||${RED}>run#  ${WHT}||
+  ||       ||
+  |"-------'|${WHT}etf
+.-^---------^-.
+| ---~   ${BLD}AMiGA${WHT}|
+"-------------"
+${WHT} Amiga Boomer ${RED}<3
+EOF
+
+# hide the cursor and wait for user input
+tput civis
+read -n 1
+
+# give the cursor back
+tput cnorm
