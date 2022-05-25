@@ -30,7 +30,7 @@ zstyle :compinstall filename "$HOME/.config/zsh/.zshrc"
 
 ## Nifty third party tools
 #import gitstatus tool
-source $HOME/.config/zsh/gitstatus/gitstatus.plugin.zsh
+source /usr/share/gitstatus/gitstatus.prompt.zsh 2>/dev/null
 # Startup zoxide
 eval "$(zoxide init zsh)"
 
