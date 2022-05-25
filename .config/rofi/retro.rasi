@@ -6,21 +6,6 @@
     text-color:            @fg;
     vertical-align:         0.5;
 	font:             "gameover 18px";
-    /*font:             "PixeloidSans 15px";*/
-    /*font:             "OldSchoolAdventures 13px";*/
-    /*font:             "F77Minecraft 14px";*/
-    /*font:             "Minecraft 17px";*/
-    /*font:             "PixelSymtext 17px";*/
-    /*font:             "OldSchoolAdventures 13px";???*/
-    /*font:             "PixelMillennium 20px";???*/
-    /*font:             "PublicPixel 12px";*/
-    /*font:             "HouseOfTheDragonColor 25px";*/
-    /*font:             "Rademos 24px";*/
-    /*font:             "ArchkingFreeTrial 23px";*/
-    /*font:             "cozette 15px";*/
-    /*font:             "terra 15px";*/
-    /*font:             "Terminus 14px";*/
-    /*font:             "spleen 14px";*/
 }
 
 window {

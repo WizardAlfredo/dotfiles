@@ -156,11 +156,3 @@ alias diff='diff --color=auto'
 alias cat="bat -p"
 alias pfetch="curl -s https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch | sh"
 alias icat="kitty +kitten icat"
-#alias xs='fuzzypkg'
-#alias bnps='java -jar ~/Public/font-stuff/bitsnpicas/main/java/BitsNPicas/BitsNPicas.jar'
-#alias figlet="figlet -d ~/Public/figlet-fonts"
-#alias kovpn="sudo pkill -INT openvpn"
-#alias pyratehole="lynx gopher://g.nixers.net/1/~pyratebeard/music/this_week.txt"
-#alias dotlink="stow --ignore='.git' --ignore='screenshots' --ignore='wallpapers' --ignore='.gitignore' --ignore='pkglist.txt' --ignore='README.md' -R --target=/home/barbaross -d /home/barbaross/Public/thonkpad-dotfiles ."
-#alias scan="scanimage --device 'hpaio:/net/OfficeJet_3830_series?ip=192.168.0.13' --progress --format=png --output-file"
-#alias cp="cp --reflink" #to make lightweight copies w/ btrfs

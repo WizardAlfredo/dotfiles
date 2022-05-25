@@ -40,22 +40,12 @@ bspc rule -r '*'
 bspc rule -a "Zathura" state=tiled
 bspc rule -a Gimp desktop='^7' state=floating follow=on
 bspc rule -a "Discord" desktop='^8' state=tiled
-#bspc rule -a "dmenu" state=floating
-#bspc rule -a St:dropdown state=floating #sticky=on
-#bspc rule -a "Sxiv" state=floating rectangle=1824x1026+40+19
-#bspc rule -a "mpv" state=floating
-#bspc rule -a Chromium desktop='^2'
-#bspc rule -a mplayer2 state=floating
-#bspc rule -a Kupfer.py focus=on
-#bspc rule -a Screenkey manage=off
 
 # My Polybar configs
 killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-# polybar -q buttons -c "$HOME/.config/polybar/config.ini" &
 polybar -q other -c "$HOME/.config/polybar/config.ini" &
 polybar -q coolworkspaces -c "$HOME/.config/polybar/config.ini" &
-#polybar -q main -c "$HOME/.config/polybar/config.ini" &
 
 ### Other stuff
 
@@ -66,6 +56,4 @@ bspc config pointer_action1 move
 # Script for the special borders of the wm
 $HOME/.config/bspwm/scripts/borders &
 
-
 bspc config -m HDMI-0 top_padding 1
-# bspc config -m DP-0 bottom_padding 1

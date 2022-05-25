@@ -35,15 +35,12 @@
 ## TODO
 
 boarders doesn't work
-polybar doesn't work
 remove commends from config files/clean up configs
-rofi fonts are not correct
-something is wrong with shortcuts
-polybar doesn't seem to work well, only the first bar is loaded
 polybar doesn't have opacity
 there is something wrong with the gtk theme.
 gtk themes are not loaded
 nitrogen needs the /pictures/wallpaper directory
+autosuggestions is broken
 
 ## NOTES
 

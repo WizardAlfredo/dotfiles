@@ -9,10 +9,7 @@
 ##   ░ ░        ░ ░  ░  ░  ░   ░ ░      
 ## ░                           ░        
 
-export PATH=$HOME/.local/bin:$PATH
 export BAT_THEME="gruvbox-dark"
-export MYVIMRC=$HOME/.config/nvim/init.vim
-export PYTHONDONTWRITEBYTECODE=1
 COLORTERM="truecolor"
 
 ### Zsh specific settings
@@ -29,7 +26,7 @@ bindkey -e
 zstyle :compinstall filename "$HOME/.config/zsh/.zshrc"
 
 ## Nifty third party tools
-#import gitstatus tool
+# Import gitstatus tool
 source /usr/share/gitstatus/gitstatus.prompt.zsh 2>/dev/null
 # Startup zoxide
 eval "$(zoxide init zsh)"
@@ -119,12 +116,12 @@ cup(){
   echo "$line"
 }
 
-#Collapse path to single chars if it gets too long
+# Collapse path to single chars if it gets too long
 collapse_pwd() {
     echo $(pwd | sed -e "s,^$HOME,~,")
 }
 
-#Truncate the dir path
+# Truncate the dir path
 truncated_pwd() {
   n=$1 # n = number of directories to show in full (n = 3, /a/b/c/dee/ee/eff)
   path=`collapse_pwd`
@@ -153,7 +150,7 @@ truncated_pwd() {
   echo ${(j:/:)dirs}
 }
 
-#Vim mode helper function; notifies current state
+# Vim mode helper function; notifies current state
 zle-keymap-select() {
   vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
   custom_prompt
