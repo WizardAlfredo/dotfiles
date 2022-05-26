@@ -34,13 +34,11 @@
 
 ## TODO
 
-boarders doesn't work
 remove commends from config files/clean up configs
 polybar doesn't have opacity
 there is something wrong with the gtk theme.
 gtk themes are not loaded
 nitrogen needs the /pictures/wallpaper directory
-autosuggestions is broken
 
 ## NOTES
 
