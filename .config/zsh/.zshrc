@@ -26,7 +26,7 @@ zstyle :compinstall filename "$HOME/.config/zsh/.zshrc"
 
 ## Nifty third party tools
 # Import gitstatus tool
-source /usr/share/gitstatus/gitstatus.prompt.zsh 2>/dev/null
+source $HOME.config/zsh/gitstatus/gitstatus.prompt.zsh
 # Startup zoxide
 eval "$(zoxide init zsh)"
 
@@ -87,7 +87,7 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 # Setup fzf
-source /usr/share/fzf/key-bindings.zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
 
 # Style completion menu
 zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==35=35}:${(s.:.)LS_COLORS}")';
