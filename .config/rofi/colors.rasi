@@ -10,3 +10,5 @@
   bg3:   #626262;
   fg:    #dfdfaf;
 }
+
+// vim:ft=css

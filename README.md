@@ -34,17 +34,20 @@
 
 ## TODO
 
+cava doesn't work
 remove commends from config files/clean up configs
 polybar doesn't have opacity
 there is something wrong with the gtk theme.
 gtk themes are not loaded
-nitrogen needs the /pictures/wallpaper directory
+Change the mod key to a global one
+fix bspwm fetching screens with the script from fanky
+configure nvim whichkey
 
 ## NOTES
 
+nitrogen needs the /pictures/wallpaper directory
 I changed the width of polybar in the vm to 1640
 I changed the workspaces in bspwmrc
-I added the fonts and kitty was really slow
 
 The following was a major sources of inspiration.
 - [Barbaross93](https://github.com/Barbaross93/Muspelheim)

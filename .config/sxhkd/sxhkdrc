@@ -9,7 +9,6 @@ alt + shift + Return
 # program launcher
 alt + @p
 	rofi -show run
-	# rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/scripts/rofi/launcher.rasi
 
 # make sxhkd reload its configuration files:
 alt + Escape
@@ -33,14 +32,6 @@ alt + m
 
 alt + Print
 	flameshot gui
-
-# send the newest marked node to the newest preselected node
-# super + y
-#   bspc node newest.marked.local -n newest.!automatic.local
-
-# swap the current node and the biggest window
-# alt + Return
-# 	bspc node -s biggest.window
 
 #
 # state/flags

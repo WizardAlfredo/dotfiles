@@ -94,8 +94,8 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
+alias fdd='fd . -type d'
+alias fdf='fd . -type f'
 
 alias h='history'
 alias hgrep="fc -El 0 | grep"
