@@ -1,5 +1,0 @@
-#!/bin/bash
-
-sudo modprobe i2c-dev \
-&& sudo modprobe i2c-piix4 \
-&& ~/programs/OpenRGB/OpenRGB

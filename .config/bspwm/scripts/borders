@@ -1,8 +1,8 @@
 #!/bin/sh
 
-outer='0x424242'   # outer
-inner1='0xaf875f'  # focused
-inner2='0x1c1c1c'  # normal
+outer='0x839496'   # outer
+inner1='0xd7d7af'  # focused
+inner2='0x002b36'  # normal
 
 targets() {
 	case $1 in

@@ -9,7 +9,6 @@
 ##   ░ ░        ░ ░  ░  ░  ░   ░ ░      
 ## ░                           ░        
 
-export BAT_THEME="gruvbox-dark"
 COLORTERM="truecolor"
 
 ### Zsh specific settings
@@ -109,11 +108,11 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 # Helper functions for prompt
 # determine cursor position to either start with/out newline
 cup(){
-  echo -ne "\033[6n" > /dev/tty
-  read -t 1 -s -d 'R' line < /dev/tty
-  line="${line##*\[}"
-  line="${line%;*}"
-  echo "$line"
+    echo -ne "\033[6n" > /dev/tty
+    read -t 1 -s -d 'R' line < /dev/tty
+    line="${line##*\[}"
+    line="${line%;*}"
+    echo "$line"
 }
 
 # Collapse path to single chars if it gets too long
@@ -123,44 +122,43 @@ collapse_pwd() {
 
 # Truncate the dir path
 truncated_pwd() {
-  n=$1 # n = number of directories to show in full (n = 3, /a/b/c/dee/ee/eff)
-  path=`collapse_pwd`
+    n=$1 # n = number of directories to show in full (n = 3, /a/b/c/dee/ee/eff)
+    path=`collapse_pwd`
 
-  # split our path on /
-  dirs=("${(s:/:)path}")
-  dirs_length=$#dirs
+    # split our path on /
+    dirs=("${(s:/:)path}")
+    dirs_length=$#dirs
 
-  if [[ $dirs_length -ge $n ]]; then
-    # we have more dirs than we want to show in full, so compact those down
-    ((max=dirs_length - n))
-    for (( i = 1; i <= $max; i++ )); do
-      step="$dirs[$i]"
-      if [[ -z $step ]]; then
-        continue
-      fi
-      if [[ $step =~ "^\." ]]; then
-        dirs[$i]=$step[0,2] #make .mydir => .m
-      else
-        dirs[$i]=$step[0,1] # make mydir => m
-      fi
-      
-    done
-  fi
+    if [[ $dirs_length -ge $n ]]; then
+        # we have more dirs than we want to show in full, so compact those down
+        ((max=dirs_length - n))
+        for (( i = 1; i <= $max; i++ )); do
+            step="$dirs[$i]"
+            if [[ -z $step ]]; then
+                continue
+            fi
+            if [[ $step =~ "^\." ]]; then
+                dirs[$i]=$step[0,2] #make .mydir => .m
+            else
+                dirs[$i]=$step[0,1] # make mydir => m
+            fi
+        done
+    fi
 
-  echo ${(j:/:)dirs}
+    echo ${(j:/:)dirs}
 }
 
 # Vim mode helper function; notifies current state
 zle-keymap-select() {
-  vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
-  custom_prompt
+    vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
+    custom_prompt
 	zle reset-prompt
 }
 
 zle -N zle-keymap-select
 
 zle-line-finish() {
-  vim_mode=$vim_ins_mode
+    vim_mode=$vim_ins_mode
 }
 
 zle -N zle-line-finish
@@ -226,6 +224,31 @@ eval $(dircolors -p | perl -pe 's/^((CAP|S[ET]|O[TR]|M|E)\w+).*/$1 00/' | dircol
 export PF_INFO="ascii title os host kernel wm pkgs shell editor palette"
 
 ### Functions
+# extract files
+ex () {
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1   ;;
+            *.tar.gz)    tar xzf $1   ;;
+            *.bz2)       bunzip2 $1   ;;
+            *.rar)       unrar x $1   ;;
+            *.gz)        gunzip $1    ;;
+            *.tar)       tar xf $1    ;;
+            *.tbz2)      tar xjf $1   ;;
+            *.tgz)       tar xzf $1   ;;
+            *.zip)       unzip $1     ;;
+            *.Z)         uncompress $1;;
+            *.7z)        7z x $1      ;;
+            *.deb)       ar x $1      ;;
+            *.tar.xz)    tar xf $1    ;;
+            *.tar.zst)   unzstd $1    ;;      
+            *)           echo "'$1' cannot be extracted via ex()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
 # Colorized man pages
 man() {
 	env \
@@ -249,13 +272,6 @@ cl() {
 	else
 		echo "zsh: cl: $dir: Directory not found"
 	fi
-}
-
-dotgit() {
-	gitdir="$HOME/Public/thonkpad-dotfiles/"
-	git -C $gitdir add .
-	git -C $gitdir commit -m "$*"
-	git -C $gitdir push
 }
 
 font_test() {
