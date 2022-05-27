@@ -26,7 +26,7 @@ zstyle :compinstall filename "$HOME/.config/zsh/.zshrc"
 
 ## Nifty third party tools
 # Import gitstatus tool
-source $HOME.config/zsh/gitstatus/gitstatus.prompt.zsh
+source $HOME/.config/zsh/gitstatus/gitstatus.prompt.zsh
 # Startup zoxide
 eval "$(zoxide init zsh)"
 

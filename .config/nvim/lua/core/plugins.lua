@@ -46,6 +46,9 @@ return require("packer").startup(function(use)
 
     use "kyazdani42/nvim-web-devicons"
 
+    -- Colorscheme
+    use "shaunsingh/solarized.nvim"
+
     -- NvimTree
     use "kyazdani42/nvim-tree.lua"
     use { "nvim-treesitter/nvim-treesitter", run = ':TSUpdate' }
