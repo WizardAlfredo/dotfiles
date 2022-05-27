@@ -41,5 +41,5 @@ M.active_plugins = {
     "colorizer"
 }
 
-M.colorscheme = "alduin"
+M.colorscheme = "solarized"
 return M
