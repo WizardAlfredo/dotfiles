@@ -77,7 +77,7 @@ setxkbmap -option caps:escape
 setxkbmap -option escape:caps
 
 # Autosuggestions 
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 
 # Autosuggest keybind ctrl + space
 bindkey '^ ' autosuggest-accept
@@ -286,4 +286,4 @@ a b c d e f g h i j k l m n o p q r s t u v w x y z
 }
 
 # Syntax highlighting
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+source ~/.config/zsh/fsh/fast-syntax-highlighting.plugin.zsh
