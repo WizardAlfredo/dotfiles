@@ -1,13 +1,12 @@
 ## Wizard
 
-![retro](./assets/retro_gaming_rise.png)
+![kali](./assets/kali_htb_v1.png)
 
 ## Info
 
-- OS: [Arch Linux](https://archlinux.org/)
+- OS: [Kali Linux]()
 - Window Manager: [bspwm](https://github.com/baskerville/bspwm)
 - Keyboard Manager [sxhkd]()
-- AUR Helper [paru]()
 - Terminal: [kitty](https://github.com/kovidgoyal/kitty)
 - Terminal Session Manager [tmux]()
 - Shell: [zsh](https://www.zsh.org/)
@@ -15,33 +14,19 @@
 - Fonts: [spleen](https://github.com/fcambus/spleen)
 - Editor: [nvim](https://github.com/neovim/neovim)
 - App Launcher: [rofi](https://github.com/davatorium/rofi)
-- Compositor: [picom](https://github.com/yshui/picom)
 - GTK Theme: [gtk]()
-- Color scheme: [alduin](https://github.com/AlessandroYorba/Alduin)
+- Color scheme: [htb]()
 - Audio Controler [pavucontrol]()
-- Cool Sound Bars [cava]()
-- Calendar: [calcurse]()
 - Alternative cat [bat]()
 - PDF Viewer [zathura]()
-- Screnshots [flameshot]()
 - Photo Viewer [sxiv]()
-- Edit Photos [gimp]()
 - Wallpaper Manager [nitrogen]()
-- Password Manager [pass]()
-- Passwords in the Cloud :eyes: [keybase]()
-- Share Mouse & Keyboard Across Devices [barrier]()
 - Pretty Printing Sysinfo [neofetch]()
 
 ## TODO
 
-cava doesn't work
-remove commends from config files/clean up configs
-polybar doesn't have opacity
-there is something wrong with the gtk theme.
-gtk themes are not loaded
-Change the mod key to a global one
-fix bspwm fetching screens with the script from fanky
-configure nvim whichkey
+better colors and maybe start new htb theme
+load a gtk theme
 
 ## NOTES
 
