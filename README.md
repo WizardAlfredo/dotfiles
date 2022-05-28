@@ -33,6 +33,9 @@ load a gtk theme
 nitrogen needs the /pictures/wallpaper directory
 I changed the width of polybar in the vm to 1640
 I changed the workspaces in bspwmrc
+fix .local files
+check https://github.com/theGuildHall/pwnbox/tree/master/.config/JetBrains
+maybe ps2p
 
 The following was a major sources of inspiration.
 - [Barbaross93](https://github.com/Barbaross93/Muspelheim)
