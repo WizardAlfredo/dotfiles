@@ -1,14 +1,13 @@
 /* colors */
 
 * {
-  al:    #e9e2cb;
-  or:    #a57705;
-  or2:   #a57705;
-  bg:    #001e26;
-  bg1:   #465a61;
-  bg2:   #465a61;
-  bg3:   #81908f;
-  fg:    #708183;
+  al:    #ffffff;
+  or:    #ffcc5c;
+  bg:    #141d2b;
+  black-bg: #111927;
+  alt-bg:   #313f55;
+  fg:    #a4b1cd;
 }
 
 // vim:ft=css
+

@@ -10,5 +10,5 @@ configuration {
 		display-name: "Emoji:";
 	}
 }
-@theme "retro"
+@theme "htb"
 // vim:ft=css

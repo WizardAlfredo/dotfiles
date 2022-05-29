@@ -12,7 +12,7 @@ window {
     background-color:               @bg;
     text-color:                     @fg;
 	border:							10px;
-	border-color:					@bg2;
+	border-color:					@alt-bg;
     border-radius:                  0px;
 	width:							280px;
     location:                       center;
@@ -21,7 +21,7 @@ window {
 }
 
 prompt {
-    background-color:   @or2;
+    background-color:   @or;
 	border:							5px;
 	border-color:					@bg;
     text-color:         @bg;
@@ -35,7 +35,7 @@ horibox {
 
 box-num {
     orientation: horizontal;
-    background-color: #465a61;
+    background-color: @black-bg;
     expand:     false;
     padding: 3px 5px;
     children: [ num-filtered-rows, textbox-slash, num-rows ];
@@ -72,7 +72,7 @@ entry {
 }
 
 element.alternate {
-    background-color:   #002731;
+    background-color:   @black-bg;
 }
 
 element {
@@ -80,7 +80,7 @@ element {
 }
 
 element selected {
-    background-color:   @or2;
+    background-color:   @or;
     text-color:         @bg;
 }
 
@@ -92,5 +92,4 @@ element-text {
 }
 
 // vim:ft=css
-
 
