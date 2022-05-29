@@ -1,6 +1,6 @@
 ## Wizard
 
-![kali](./assets/kali_htb_v1.png)
+![kali](./assets/kali_htb_v2.png)
 
 ## Info
 
