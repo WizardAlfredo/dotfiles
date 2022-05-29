@@ -25,11 +25,9 @@
 
 ## TODO
 
-better colors and maybe start new htb theme
 load a gtk theme
-change polybar theme
 change nvim theme
-change the fonts to rofi, terminal
+change the fonts to rofi, zsh, polybar
 bat is not working (batcat)
 
 ## NOTES
