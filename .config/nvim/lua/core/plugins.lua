@@ -47,7 +47,7 @@ return require("packer").startup(function(use)
     use "kyazdani42/nvim-web-devicons"
 
     -- Colorscheme
-    use "ishan9299/nvim-solarized-lua"
+    use "WizardAlfredo/nvim-htb-lua"
 
     -- NvimTree
     use "kyazdani42/nvim-tree.lua"

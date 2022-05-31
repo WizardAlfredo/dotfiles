@@ -41,5 +41,5 @@ M.active_plugins = {
     "colorizer"
 }
 
-M.colorscheme = "solarized"
+M.colorscheme = "htb"
 return M
