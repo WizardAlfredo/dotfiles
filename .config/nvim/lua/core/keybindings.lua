@@ -11,6 +11,8 @@ local keymap = vim.api.nvim_set_keymap
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- Here you I have the mappings that I use all the time
+
 -- better tabbing
 keymap('v', '>', '>gv', options)
 keymap('v', '<', '<gv', options)
@@ -51,10 +53,12 @@ keymap("n", "<C-Left>", ":vertical resize +2<CR>", options)
 
 keymap("n", "<C-n>", ":enew<CR>", options)
 
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", options)
+keymap("n", "<leader>f",
+    "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>"
+    , options)
 keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", options)
 keymap("n", "C-f", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", options)
 
 -- Comments
-keymap("v", "<leader>/", "<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>", options)
-keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", options)
+keymap("v", "<leader>/", "<Plug>(comment_toggle_linewise_visual)<cr>", options)
+keymap("n", "<leader>/", "<Plug>(comment_toggle_linewise_visual)<cr>", options)

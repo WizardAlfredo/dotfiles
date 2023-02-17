@@ -8,7 +8,7 @@ local formatting = null_ls.builtins.formatting
 local options = {
     debug = false,
     sources = {
-        formatting.prettier.with({ extra_args = { "--no-semi" } }),
+        formatting.prettier.with({ extra_args = { "--use-tabs" } }),
         formatting.yapf,
         formatting.clang_format
     },

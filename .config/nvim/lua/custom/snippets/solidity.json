@@ -1,0 +1,22 @@
+{
+	"ethernaut": {
+		"prefix": "ethernaut",
+		"body": [
+			"// SPDX-License-Identifier: MIT",
+			"pragma solidity ^0.6.0;\n",
+			"interface $1 {",
+			"    function $2(address _to) external payable;",
+			"}\n",
+			"contract Hack$1 {",
+			"    $1 $3Contract;\n",
+			"    constructor(address _address) public {",
+			"        $3Contract = $4(_address);",
+			"    }\n",
+			"    function callFunction() public {",
+			"        $3Contract.function{value: }(address(this));",
+			"    }",
+			"}"
+		],
+		"description": "create a malicious contract for ehternaut"
+	}
+}

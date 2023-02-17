@@ -9,5 +9,5 @@ autocmd("FileType", {
 -- Format on save
 autocmd("BufWritePre", {
     pattern = "*",
-    command = "lua vim.lsp.buf.formatting()"
+    command = "lua vim.lsp.buf.format()"
 })

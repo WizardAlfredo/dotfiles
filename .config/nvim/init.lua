@@ -3,6 +3,7 @@ local present, impatient = pcall(require, "impatient")
 if present then
     impatient.enable_profile()
 end
+
 vim.api.nvim_set_keymap('n', ' ', '<NOP>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
 

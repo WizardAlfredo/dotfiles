@@ -10,17 +10,18 @@ M.parsers = {
     "json",
     "lua",
     "python",
-    "typescript",
     "css",
     "dockerfile",
-    "markdown"
+    "markdown",
+    "solidity"
 }
 
 M.language_servers = {
     "clangd",
     "pyright",
     "bashls",
-    "sumneko_lua"
+    "sumneko_lua",
+    "solidity_ls"
 }
 
 

@@ -1,8 +1,3 @@
-### ARCHIVE EXTRACTION
-# usage: ex <file>
-
-alias vim='nvim'
-
 # navigation
 alias ..='cd ..' 
 alias ...='cd ../..'
@@ -10,30 +5,19 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
-
-# pacman and yay
+# apt
 alias aptu="sudo apt update"                 # update only standard pkgs
-
 
 # Changing "ls" to "exa"
 alias ls='exa --color=always --group-directories-first' # my preferred listing
 alias la='exa -la --color=always --group-directories-first'  # all files and dirs
 alias ll='exa -l --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
-alias l.='exa -a | egrep "^\."'
 
-
-# ls, the common ones I use a lot shortened for rapid fire usage
-alias lr='ls -tRFh --color=auto'   #sorted by date,recursive,show type,human readable
-alias ldot='ls -ld .* --color=auto'
-alias lS='ls -1FSsh --color=auto'
-alias lart='ls -1Fcart --color=auto'
-alias lrt='ls -1Fcrt --color=auto'
-
+export EDITOR=nvim
 alias zshrc='${=EDITOR} ~/.config/zsh/.zshrc' # Quick access to the zshrc file
 alias nvimrc='${=EDITOR} ~/.config/nvim/init.vim' # Quick access to the init.vim file
-alias aliasrc='${=EDITOR} ~/.config/zsh/aliasrc' # Quick access to the alias file
-alias uni='${=EDITOR} ~/documents/uniProgram.md' # Quick access to uni program
+alias aliasrc='${=EDITOR} ~/.config/zsh/.aliasrc' # Quick access to the alias file
 
 # Colorize grep output
 alias grep='grep --color=auto'
@@ -74,6 +58,7 @@ alias unexport='unset'
 
 alias cp='cp -i'
 alias mv='mv -i'
+alias rmf='rm -rf'
 
 alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
 
@@ -104,17 +89,20 @@ alias newtag='git tag -a'
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
 
-# gpg encryption
-# verify signature for isos
-alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
-# receive the key of a developer
-alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
-
-# hacking
-alias copy='xclip -selection clipboard'
-
-# from muspelheim
+# general
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias ip='ip --color=auto'
+alias vim='nvim'
 alias diff='diff --color=auto'
-alias cat="bat -p"
+alias cat="batcat -p"
+alias copy='xclip -selection clipboard'
 alias pfetch="curl -s https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch | sh"
 alias icat="kitty +kitten icat"
+
+# Hacking
+alias pyserv='python3 -m http.server'
+alias nclis='nc -nvlp'
+alias catssh='cat ~/.ssh/id_rsa.pub'
+alias _nmap='nmap -p- -T4 -vv'
+alias _gobust='gobuster dir -w /usr/share/wordlists/dirb/common.txt -u'

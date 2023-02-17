@@ -1,6 +1,6 @@
 local status_ok, which_key = pcall(require, "which-key")
 if not status_ok then
-  return
+    return
 end
 
 local setup = {
@@ -27,11 +27,11 @@ local setup = {
     -- to enable all native operators, set the preset / operators plugin above
     -- operators = { gc = "Comments" },
     key_labels = {
-    -- override the label used to display some keys. It doesn't effect WK in any other way.
-    -- For example:
-    -- ["<space>"] = "SPC",
-    -- ["<cr>"] = "RET",
-    -- ["<tab>"] = "TAB",
+        -- override the label used to display some keys. It doesn't effect WK in any other way.
+        -- For example:
+        -- ["<space>"] = "SPC",
+        -- ["<cr>"] = "RET",
+        -- ["<tab>"] = "TAB",
     },
     icons = {
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
@@ -79,7 +79,7 @@ local opts = {
 }
 
 local mappings = {
-    ["/"] = { "<cmd>lua require(\"Comment.api\").toggle_current_linewise()<CR>", "Comment" },
+    -- ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
     ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
     ["b"] = {
         "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -117,8 +117,8 @@ local mappings = {
         R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
         s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
         u = {
-          "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-          "Undo Stage Hunk",
+            "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
+            "Undo Stage Hunk",
         },
         o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
         b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -144,8 +144,8 @@ local mappings = {
         i = { "<cmd>LspInfo<cr>", "Info" },
         I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
         j = {
-                "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-                "Next Diagnostic",
+            "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
+            "Next Diagnostic",
         },
         k = {
             "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
@@ -193,10 +193,9 @@ local vopts = {
 }
 
 local vmappings = {
-    ["/"] = { "<ESC><CMD>lua require(\"Comment.api\").toggle_linewise_op(vim.fn.visualmode())<CR>", "Comment" },
+    -- ["/"] = { "<Plug>(comment_toggle_linewise_visual)<cr>", "Comment" },
 }
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
-

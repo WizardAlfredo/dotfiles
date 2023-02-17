@@ -40,21 +40,17 @@ local function custom_filter(buf, buf_nums)
 end
 
 local options = {
-    active = true,
     on_config_done = nil,
-    keymap = {
-        normal_mode = {},
-    },
     highlights = {
         background = {
-            gui = "italic",
+           italic = true,
         },
         fill = {
-            guibg = "#1e1f21"
+            bg = "#1e1f21"
 
         },
         buffer_selected = {
-            gui = "bold",
+            bold = true
         },
     },
     options = {
@@ -63,7 +59,7 @@ local options = {
         right_mouse_command = "vert sbuffer %d", -- can be a string | function, see "Mouse actions"
         left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
         middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
-        indicator_icon = "▎",
+        --[[ indicator_icon = "▎", ]]
         buffer_close_icon = "",
         modified_icon = "●",
         close_icon = "",
@@ -115,7 +111,7 @@ local options = {
             },
         },
         show_buffer_icons = true, -- disable filetype icons for buffers
-        show_buffer_close_icons = false,
+        show_buffer_close_icons = true,
         show_close_icon = false,
         show_tab_indicators = true,
         persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
@@ -129,3 +125,4 @@ local options = {
 }
 
 bufferline.setup(options)
+

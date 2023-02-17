@@ -1,10 +1,93 @@
 {
-  "rsa": {
-    "prefix": "rsa",
-    "body": [
-        "from Crypto.PublicKey import RSA",
-        "\nf = open('$1key.pem','r')"
-    ],
-    "description": "RSA"
-  }
+	"rsa_key": {
+		"prefix": "rsa_key",
+		"body": [
+			"from Crypto.PublicKey import RSA\n",
+			"f = open(\"$1\", \"r\")",
+			"key = RSA.import_key(f.read())",
+			"print(key.n, key.e)"
+		],
+		"description": "Import RSA public key."
+	},
+	"rsa_decrypt": {
+		"prefix": "rsa_decrypt",
+		"body": [
+			"from Crypto.Util.number import *\n",
+			"phi = (p - 1) * (q - 1)",
+			"d = inverse(e, phi)",
+			"plaintext = long_to_bytes(pow(ciphertext, d, n))"
+		],
+		"description": "Decrypt RSA with private key"
+	},
+	"pwn": {
+		"prefix": "pwnos",
+		"body": [
+			"from pwn import *\n\n",
+			"def toAscii(data):",
+			"    return data.decode().strip()\n\n",
+			"def getData():",
+			"    r.sendlineafter(b\"\", b\"\")",
+			"    data = toAscii(r.recvline())",
+			"    return data\n\n",
+			"def pwn():",
+			"    data = getData()",
+			"    print(data)",
+			"    r.interactive()\n\n",
+			"if __name__ == \"__main__\":",
+			"    if args.REMOTE:",
+			"        ip, port = args.HOST.split(\":\")",
+			"        r = remote(ip, int(port))",
+			"    else:",
+			"        r = process(\"python3 server.py\")\n",
+			"    pwn()"
+		],
+		"description": "Template for solver with pwntools."
+	},
+	"socket": {
+		"prefix": "sok",
+		"body": [
+			"import socketserver",
+			"import signal\n",
+			"WELCOME = \"\"\"",
+			"HI",
+			"\"\"\"\n\n",
+			"class Handler(socketserver.BaseRequestHandler):\n",
+			"    def handle(self):",
+			"        signal.alarm(5000)",
+			"        main(self.request)\n\n",
+			"class ReusableTCPServer(socketserver.ForkingMixIn, socketserver.TCPServer):",
+			"    pass\n\n",
+			"def sendMessage(s, msg):",
+			"    s.send(msg.encode())\n\n",
+			"def receiveMessage(s, msg):",
+			"    sendMessage(s, msg)",
+			"    return s.recv(4096).decode().strip()\n\n",
+			"class Name():\n",
+			"    def __init__(self):",
+			"        self.name = None\n",
+			"    def imanasou(self, name):",
+			"        return name\n\n",
+			"def main(s):",
+			"    name = Name()\n",
+			"    sendMessage(s, WELCOME)\n",
+			"    while True:",
+			"        option = sendMessage(s, \"\\nHello, what would you like to do?\\n\\n\")\n",
+			"        try:",
+			"            option = int(receiveMessage(s, \"\\n> \"))\n",
+			"            if option == 1:",
+			"                pass",
+			"            else:",
+			"                pass\n",
+			"        except KeyboardInterrupt:",
+			"            sendMessage(s, \"\\n\\nExiting\")",
+			"            exit(1)\n",
+			"        except Exception as e:",
+			"            sendMessage(s, f\"\\nAn error occurred while processing data: {e}\\n\")\n\n",
+			"if __name__ == \"__main__\":",
+			"    socketserver.TCPServer.allow_reuse_address = True",
+			"    server = ReusableTCPServer((\"0.0.0.0\", 1337), Handler)",
+			"    server.serve_forever()"
+		],
+		"description": "Create socket server for challenges."
+	}
 }

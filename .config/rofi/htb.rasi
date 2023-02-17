@@ -5,16 +5,16 @@
     border-color:          @bg;
     text-color:            @fg;
     vertical-align:         0.5;
-	font:             "terminus 14px";
+	font:             "notosansmono 12px";
 }
 
 window {
     background-color:               @bg;
     text-color:                     @fg;
-	border:							10px;
+	border:							8px;
 	border-color:					@alt-bg;
     border-radius:                  0px;
-	width:							280px;
+	width:							250px;
     location:                       center;
     x-offset:                       0;
     y-offset:                       0;
@@ -37,7 +37,7 @@ box-num {
     orientation: horizontal;
     background-color: @black-bg;
     expand:     false;
-    padding: 3px 5px;
+    padding: 2px 4px;
     children: [ num-filtered-rows, textbox-slash, num-rows ];
 }
 num-filtered-rows {
@@ -54,10 +54,10 @@ textbox-slash {
 
 listview {
     background-color:               @bg;
-    padding:                        5px 5px 5px 5px;
+    padding:                        4px 4px 4px 4px;
     columns:                        2;
-    lines:                          4;
-    spacing:                        5px;
+    lines:                          3;
+    spacing:                        3px;
     cycle:                          true;
     dynamic:                        true;
     layout:                         vertical;
@@ -92,4 +92,5 @@ element-text {
 }
 
 // vim:ft=css
+
 

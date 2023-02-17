@@ -1,18 +1,20 @@
 #! /bin/sh
 
-# Do nothing if interrupted
+# General
 trap '' INT TSTP
-
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep bspswallow || bspswallow &
 picom -f &
 nitrogen --restore &
+systemctl start spice-vdagent
+spice-vdagent &
 
+# Monitors and Workplaces
 for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
     bspc monitor $m -d 1 2 3 4 5 6
 done
 
-#bspc config bottom_monocle_padding 3
+# Borders
 bspc config border_width 6
 bspc config right_padding 2
 bspc config left_padding 2
@@ -30,8 +32,6 @@ bspc config pointer_follows_focus false
 bspc config single_monocle true
 bspc config ignore_ewmh_focus true
 
-### Rules
-
 # Cleanup
 bspc rule -r '*'
 
@@ -39,8 +39,6 @@ bspc rule -r '*'
 killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 polybar -q main -c "$HOME/.config/polybar/config.ini" &
-
-### Other stuff
 
 # In order for resizing with alt and mouse to work
 bspc config pointer_modifier mod1
